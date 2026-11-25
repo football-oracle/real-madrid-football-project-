@@ -48,3 +48,13 @@ CREATE TABLE STADIUM (
     opened_year   NUMBER(4),
     CONSTRAINT chk_stadium_capacity CHECK (capacity > 0)
 );
+
+
+CREATE TABLE MEDICAL_RECORD (
+record_id     NUMBER PRIMARY KEY,
+player_id     NUMBER NOT NULL,
+injury_type   VARCHAR2(100),
+injury_date   DATE,
+return_date   DATE,
+
+CONSTRAINT fk_medical_player FOREIGN KEY (player_id) REFERENCES PLAYER(player_id)
