@@ -12,3 +12,16 @@ CREATE TABLE PLAYER (
     salary             NUMBER(14,2),
     joined_date        DATE,
     contract_end_date  DATE,
+
+
+
+CONSTRAINT uq_player_jersey UNIQUE (jersey_number),
+    
+    CONSTRAINT chk_player_foot CHECK (preferred_foot IN ('Right', 'Left', 'Both')),
+    
+    CONSTRAINT chk_player_jersey CHECK (jersey_number BETWEEN 1 AND 99),
+    
+    CONSTRAINT chk_player_salary CHECK (salary >= 0),
+    
+    CONSTRAINT chk_player_age CHECK (age >= 18 AND age <= 100)  
+);
