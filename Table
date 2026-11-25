@@ -38,3 +38,13 @@ CREATE TABLE COACH (
     CONSTRAINT chk_coach_salary CHECK (salary >= 0),           
     CONSTRAINT chk_coach_age CHECK (age >= 18 AND age <= 100)  
 );
+
+
+CREATE TABLE STADIUM (
+    stadium_id    NUMBER PRIMARY KEY,
+    stadium_name  VARCHAR2(100) NOT NULL,
+    location      VARCHAR2(150),
+    capacity      NUMBER,
+    opened_year   NUMBER(4),
+    CONSTRAINT chk_stadium_capacity CHECK (capacity > 0)
+);
