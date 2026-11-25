@@ -58,3 +58,11 @@ injury_date   DATE,
 return_date   DATE,
 
 CONSTRAINT fk_medical_player FOREIGN KEY (player_id) REFERENCES PLAYER(player_id)
+
+
+CREATE TABLE ACHIEVEMENT (
+    achievement_id    NUMBER PRIMARY KEY,
+    achievement_name  VARCHAR2(100) NOT NULL,
+    achievement_year  NUMBER(4)
+);
+
